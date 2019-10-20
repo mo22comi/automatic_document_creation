@@ -6,7 +6,6 @@ function EditDocument(number, template_id){
 
   var targetList;
   var list = Datalist();
-  Logger.log(list);
   
   // 選択された番号のデータを取得
   for(var i = 0; i < list.length; i++){
