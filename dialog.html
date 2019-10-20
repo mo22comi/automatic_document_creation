@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>    
+  </head>
+  <body>
+  <!---->
+  <form name="dialog">
+    <select name="numberList">
+    <option>---選択してください---</option>
+    <?
+      var data = Datalist();
+      for(var i = 0; i < data.length; i++){
+        output.append('<option>' + data[i]["番号"] + '</option>');
+      }
+    ?>
+    </select>
+  <?
+    var template = Template();
+    for(var i = 0; i < template.length; i++){
+      output.append('<p>\n<label>\n');
+      output.append('<input type="radio" name="documents" value=' + template[i]["id"] + '>' + template[i]["name"] + '<br>');
+      output.append('</label>\n</p>\n');
+    }
+  ?>
+  <div id="output"></div>
+  <a id="download" class="square_btn" href="#" onclick="OnButtonClick()">作成</a>
+  </form>
+  <?!= HtmlService.createHtmlOutputFromFile('js').getContent(); ?>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<script type="text/javascript" language="javascript">
+function OnButtonClick(){
+  var target = document.getElementById("output");
+  var num = document.dialog.numberList.value;
+  var radio = document.dialog.documents;
+  
+  for(var i = 0; i < radio.length; i++){
+    if(radio[i].checked){
+      target.innerText = num + "を作成中…";
+
+      google.script.run.withSuccessHandler(DownloadFile).EditDocument(num, radio[i].value);
+      function DownloadFile(link){
+        window.location.href = link;
+        target.innerText = "作成完了しました。ダウンロードします。"
+        window.close();
+      }
+    }
+  }
+}
+</script>
