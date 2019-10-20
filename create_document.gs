@@ -1,6 +1,6 @@
 function EditDocument(number, template_id){
-  var copy_dest_folder_id = CopyDestFolderId();
-  var file_id = CopyTemplateFile(number, template_id, copy_dest_folder_id);
+  const COPY_DEST_FOLDER_ID = CopyDestFolderId();
+  var file_id = CopyTemplateFile(number, template_id, COPY_DEST_FOLDER_ID);
   var doc = DocumentApp.openById(file_id);
   var body = doc.getBody();
 

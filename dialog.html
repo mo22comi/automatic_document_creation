@@ -17,10 +17,10 @@
     ?>
     </select>
   <?
-    var template = Template();
-    for(var i = 0; i < template.length; i++){
+    const TEMPLATES = Templates();
+    for(var i = 0; i < TEMPLATES.length; i++){
       output.append('<p>\n<label>\n');
-      output.append('<input type="radio" name="documents" value=' + template[i]["id"] + '>' + template[i]["name"] + '<br>');
+      output.append('<input type="radio" name="documents" value=' + TEMPLATES[i]["id"] + '>' + TEMPLATES[i]["name"] + '<br>');
       output.append('</label>\n</p>\n');
     }
   ?>
